@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Cracking Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Password Cracking Playground</h1>
+        <p>Wordlist Generator • Hash Cracker • Mutations • Comparison</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Wordlist Generator -->
+        <section class="card">
+            <h2>Wordlist Generator</h2>
+
+            <label>Select Charset</label>
+            <select id="charsetOption">
+                <option value="lower">Lowercase (a-z)</option>
+                <option value="lowerdigit">Lowercase + Digits</option>
+                <option value="full">Full Characters</option>
+            </select>
+
+            <label>Min Length</label>
+            <input id="minLength" type="number" placeholder="1">
+
+            <label>Max Length</label>
+            <input id="maxLength" type="number" placeholder="4">
+
+            <button onclick="generateWordlist()">Generate Wordlist</button>
+
+            <div class="output-box" id="wordlistOutput">
+                <p class="placeholder">Preview will appear here...</p>
+            </div>
+        </section>
+
+        <!-- Rule Mutations -->
+        <section class="card">
+            <h2>Rule-Based Mutations</h2>
+
+            <label>Enter Base Words</label>
+            <input id="mutationWords" type="text" placeholder="example, password, admin">
+
+            <button onclick="applyMutations()">Apply Mutations</button>
+
+            <div class="output-box" id="mutationOutput">
+                <p class="placeholder">Mutations will appear here...</p>
+            </div>
+        </section>
+
+        <!-- Hash Generator -->
+        <section class="card">
+            <h2>Hash a Password</h2>
+
+            <label>Enter Password</label>
+            <input id="hashText" type="text" placeholder="Enter password">
+
+            <label>Select Algorithm</label>
+            <select id="hashAlgo">
+                <option value="md5">MD5</option>
+                <option value="sha1">SHA1</option>
+                <option value="sha256">SHA-256</option>
+            </select>
+
+            <button onclick="generateHash()">Generate Hash</button>
+
+            <div class="output-box" id="hashOutput">
+                <p class="placeholder">Hashed value will appear here...</p>
+            </div>
+        </section>
+
+        <!-- Crack Hash -->
+        <section class="card">
+            <h2>Crack a Hash</h2>
+
+            <label>Enter Hash</label>
+            <input id="crackHashInput" type="text" placeholder="Paste hash here">
+
+            <label>Select Algorithm</label>
+            <select id="crackAlgo">
+                <option value="md5">MD5</option>
+                <option value="sha1">SHA1</option>
+                <option value="sha256">SHA-256</option>
+            </select>
+
+            <label>Wordlist (comma separated)</label>
+            <input id="crackWordlist" type="text" placeholder="or type 'auto' for brute force">
+
+            <button onclick="crackHash()">Crack Hash</button>
+
+            <div class="output-box" id="crackOutput">
+                <p class="placeholder">Cracking result will show here...</p>
+            </div>
+        </section>
+
+        <!-- Hashcat Comparison -->
+        <section class="card">
+            <h2>Hashcat Speed Comparison</h2>
+
+            <label>Select Algorithm</label>
+            <select id="compareAlgo">
+                <option value="md5">MD5</option>
+                <option value="sha1">SHA1</option>
+                <option value="sha256">SHA-256</option>
+            </select>
+
+           <button onclick="compareSpeed()">Compare Speed</button>
+
+            <div class="output-box" id="compareOutput">
+                <p id="speedOutput">Hashcat comparison will appear here...</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

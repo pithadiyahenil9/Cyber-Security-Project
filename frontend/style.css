@@ -1,0 +1,116 @@
+/* BASIC RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+header p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* CONTAINER LAYOUT */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 20px;
+}
+
+
+/* CARD */
+.card {
+    background: #ffffff;
+    padding: 20px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+
+.card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+
+/* INPUTS */
+label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+input:focus, select:focus {
+    border-color: #4a90e2;
+}
+
+
+/* BUTTON */
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #357ac9;
+}
+
+
+/* OUTPUT BOX */
+.output-box {
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 60px;
+    margin-top: 15px;
+}
+
+.placeholder {
+    color: #888;
+    font-size: 14px;
+}
